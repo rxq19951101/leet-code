@@ -1,0 +1,4 @@
+
+
+before edit
+#pragma GCC diagnostic error "-std=c++11"
