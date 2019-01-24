@@ -1,0 +1,28 @@
+输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。
+
+
+这个一般的情况很好考虑，主要是特殊情况，也就是为负。如果负用补码
+
+负的最大值INT_MIN 为2的32次方，所以负数如果以补码形式存在，则必须要用2的33次方去减，才能得到最后的值，但是计算量偏大，所以直接默认如果为负数，则就会多一个1,因为在32位上，这一位必为1.
+
+
+
+class Solution {
+public:
+     int  NumberOf1(int n) {
+         long long dummy=n;
+         int count=0;
+         int res=0;
+         if(n<0) {
+             dummy=-INT_MIN-(-n);
+             res++;
+         }
+         
+         while(dummy!=0){
+             if(dummy%2) res++;
+             dummy/=2;
+
+         }
+         return res;
+     }
+};

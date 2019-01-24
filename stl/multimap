@@ -1,0 +1,8 @@
+multimap和map的区别主要就是在于 map的key值独一无二，而multimap的key可以关联多个数字。
+
+
+顺便讲讲Map的基本操作。
+map中的operator[]就可以默认进行插入操作，如果没有这个index值会直接插入一个，而不会像其他的一样报错。
+删除操作 erase 与vector类似。
+
+而multimap的操作与map基本一致，先用find找到index对应的第一个迭代器，然后+1找后面的。类似链表的查找方法。还有一个迭代器，Lower_bound, upper_bond可以查找到一个index的上下范围。
